@@ -35,21 +35,27 @@ void deletehead(node* &head){
 }
 
 void deletion(node* &head, int val){  // deleting a node if it's val is given
+
+    if(head==NULL)
+     cout<<"Nothing to delete";
+
     node* temp=head;
+
     if (temp->data==val){    // head to delete
         node* todelete=temp;
         head=temp->next;
         return;      // head has been updated as pass by ref
     }
+
     while(temp->next->data!=val){
         temp=temp->next;
     }
-    node* todelete=temp->next;
+    node* todelete=temp->next->next;
     temp->next=temp->next->next;
     delete todelete;
 }
 
-/*void deleteatend(node* &head){
+void deleteatend(node* &head){
     node*todelete,*temp;
     while(temp->next->next!=NULL){
         temp=temp->next;
@@ -57,7 +63,7 @@ void deletion(node* &head, int val){  // deleting a node if it's val is given
     todelete=temp->next->next;
     temp->next=NULL;
     delete todelete;
-}*/
+}
 
 void display(node* head){  //by value head passed so even if head used instd of temp ok
     node* temp=head;
@@ -85,5 +91,6 @@ int main(){
     display(head);
     deletehead(head);
     display(head);
-    //deleteatend(head);
+    deleteatend(head);
+    display(head);
 }
