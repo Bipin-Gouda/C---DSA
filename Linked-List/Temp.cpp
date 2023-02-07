@@ -3,7 +3,7 @@ using namespace std;
 
 // Both are call by refference
 
-void ref1(int* x){
+void ref1(int* x){        // C has only this and call by value
 
     *x=12;
 }

@@ -28,7 +28,7 @@ void insertAtEnd(node* &head, int val){
     temp->next=n;
 }
 
-void display(node* head){  //by value head passed
+void display(node* head){  //by value head passed so even if head used instd of temp ok
     node* temp=head;
     while(temp!=NULL){
         cout<<temp->data<<" ";
