@@ -2,3 +2,5 @@ vectors
 pairs
 auto 
 this
+
+delete - it is used else memory leak can happen

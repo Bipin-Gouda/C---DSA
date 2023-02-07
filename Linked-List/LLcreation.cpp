@@ -28,7 +28,13 @@ void insertAtEnd(node* &head, int val){
     temp->next=n;
 }
 
-void deletion(node* &head, int val){  // deleting a node whose val is given
+void deletehead(node* &head){
+    node*todelete=head;
+    head=head->next;
+    delete todelete;
+}
+
+void deletion(node* &head, int val){  // deleting a node if it's val is given
     node* temp=head;
     if (temp->data==val){    // head to delete
         node* todelete=temp;
@@ -42,6 +48,16 @@ void deletion(node* &head, int val){  // deleting a node whose val is given
     temp->next=temp->next->next;
     delete todelete;
 }
+
+/*void deleteatend(node* &head){
+    node*todelete,*temp;
+    while(temp->next->next!=NULL){
+        temp=temp->next;
+    }
+    todelete=temp->next->next;
+    temp->next=NULL;
+    delete todelete;
+}*/
 
 void display(node* head){  //by value head passed so even if head used instd of temp ok
     node* temp=head;
@@ -60,9 +76,14 @@ int main(){
     insertAtEnd(head,3);
     insertAtEnd(head,6);
     insertAtEnd(head,29);
+    insertAtEnd(head,13);
+    insertAtEnd(head,12);
     display(head);
     deletion(head,1);
     display(head);
     deletion(head,29);
     display(head);
+    deletehead(head);
+    display(head);
+    //deleteatend(head);
 }
