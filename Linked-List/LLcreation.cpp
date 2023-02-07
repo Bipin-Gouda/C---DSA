@@ -36,14 +36,16 @@ void deletehead(node* &head){
 
 void deletion(node* &head, int val){  // deleting a node if it's val is given
 
-    if(head==NULL)
+    if(head==NULL){
      cout<<"Nothing to delete";
-
+     return;
+    }
     node* temp=head;
 
     if (temp->data==val){    // head to delete
         node* todelete=temp;
         head=temp->next;
+        delete todelete;
         return;      // head has been updated as pass by ref
     }
 
@@ -91,6 +93,6 @@ int main(){
     display(head);
     deletehead(head);
     display(head);
-    deleteatend(head);
-    display(head);
+    //deleteatend(head);
+    //display(head);
 }
