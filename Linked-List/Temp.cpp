@@ -21,3 +21,6 @@ int main()
     ref2(x);
     cout<<x;
 }
+
+// or pass by value and return the updated value of head
+// in pass by ref just return as change done will be reflected
