@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//middle element finding in LL
+// Reversing the LL
 
 class node{
     public:
