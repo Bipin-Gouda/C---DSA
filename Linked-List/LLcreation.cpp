@@ -59,10 +59,11 @@ void deletion(node* &head, int val){  // deleting a node if it's val is given
 
 void deleteatend(node* &head){
     node*todelete,*temp;
+    temp=head;
     while(temp->next->next!=NULL){
         temp=temp->next;
     }
-    todelete=temp->next->next;
+    todelete=temp->next;
     temp->next=NULL;
     delete todelete;
 }
