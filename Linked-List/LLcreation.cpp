@@ -52,7 +52,7 @@ void deletion(node* &head, int val){  // deleting a node if it's val is given
     while(temp->next->data!=val){
         temp=temp->next;
     }
-    node* todelete=temp->next->next;
+    node* todelete=temp->next;
     temp->next=temp->next->next;
     delete todelete;
 }
@@ -93,6 +93,6 @@ int main(){
     display(head);
     deletehead(head);
     display(head);
-    //deleteatend(head);
-    //display(head);
+    deleteatend(head);
+    display(head);
 }
