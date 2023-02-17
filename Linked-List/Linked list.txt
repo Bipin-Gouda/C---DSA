@@ -1,4 +1,4 @@
-Reversing LL
+1. Reversing LL
 
 void revLL(node* &head){
     node*current=head,*next,*prev=NULL;
@@ -9,5 +9,24 @@ void revLL(node* &head){
         current=next;
     }
     head=prev;
-    
+
+}
+
+2. Finding mid element 
+
+void findmid(node* &head){
+    node*p1=head,*p2=head;
+    while(p2!=NULL&&p2->next!=NULL){
+        p1=p1->next;
+        p2=(p2->next)?p2->next->next:NULL;
+    }
+    printf("%d",p1->data);
+
+}
+
+3. Finding loop in LL 
+
+void findLoop(node* head){
+    node* slow=head,*fast=head->next;
+    while(slow!=NULL && fast!=NULL)
 }
