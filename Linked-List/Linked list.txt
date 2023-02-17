@@ -28,5 +28,12 @@ void findmid(node* &head){
 
 void findLoop(node* head){
     node* slow=head,*fast=head->next;
-    while(slow!=NULL && fast!=NULL)
+    while(slow!=NULL && fast!=NULL){
+        if(slow->data == fast->data){
+            print("Loop detected");
+            exit(0);
+        }
+        slow=slow->next;
+        fast=(fast->next)?fast->next->fast->next;
+    }
 }
