@@ -16,14 +16,14 @@ class node{
 
 
 void revLL(node* &head){
-    node*X=head,*Y,*Z=NULL;
-    while(X!=NULL){
-        Y=X->next;
-        X->next=Z;
-        Z=X;
-        X=Y;
+    node*current=head,*next,*prev=NULL;
+    while(current!=NULL){
+        next=current->next;
+        current->next=prev;
+        prev=current;
+        current=next;
     }
-    head=Z;
+    head=prev;
 
 }
 
